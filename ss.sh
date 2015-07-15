@@ -37,7 +37,9 @@ if [ $OS = "ubuntu" ]; then
 fi
 if [ $OS = "debian" ]; then
 apt-get update -y
+
 apt-get  install python-setuptools m2crypto supervisor -y
+apt-get install denyhosts -y
 easy_install pip  
 pip install shadowsocks
 	
@@ -104,8 +106,6 @@ if [ $OS = "centos" ]; then
 	 echo "log_stderr=true" >> /etc/supervisord.conf
 	 echo "logfile=/var/log/shadowsocks.log" >> /etc/supervisord.conf
 fi
-
-
 
 echo ""
 echo -e "============================="
